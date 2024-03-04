@@ -1,7 +1,5 @@
 # raiNbow
 
----
-
 ### Idea
 
 raiNbow is intended to be a headless CMS implemented in .NET. 
