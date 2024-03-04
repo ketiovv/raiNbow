@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaiNbow.API", "RaiNbow.API\RaiNbow.API.csproj", "{AF533B0A-48B3-452C-9691-66F11D190CDF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaiNbow", "RaiNbow\RaiNbow.csproj", "{ED9D3138-75F4-4459-AEE2-11C9C083B920}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{AF533B0A-48B3-452C-9691-66F11D190CDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF533B0A-48B3-452C-9691-66F11D190CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF533B0A-48B3-452C-9691-66F11D190CDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED9D3138-75F4-4459-AEE2-11C9C083B920}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED9D3138-75F4-4459-AEE2-11C9C083B920}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED9D3138-75F4-4459-AEE2-11C9C083B920}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED9D3138-75F4-4459-AEE2-11C9C083B920}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
