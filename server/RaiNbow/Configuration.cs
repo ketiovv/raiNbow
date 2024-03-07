@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using RaiNbow.Cms;
 using RaiNbow.Core.Storage;
 
 namespace RaiNbow;
@@ -13,4 +15,7 @@ public static class Configuration
 
         return services;
     }
+
+    public static IEndpointRouteBuilder UseRaiNbowEndpoints(this IEndpointRouteBuilder endpoints)
+        => endpoints.UseCmsEndpoints();
 }

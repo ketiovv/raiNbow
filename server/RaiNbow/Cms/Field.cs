@@ -8,8 +8,8 @@ public class Field
     public required string Name { get; set; }
 
     public int FieldTypeId { get; set; }
-    public FieldType FieldType { get; set; }
+    public FieldType? FieldType { get; set; }
 
     public Guid SchemaId { get; set; }
-    public required Schema Schema { get; set; }
+    public Schema? Schema { get; set; }
 }

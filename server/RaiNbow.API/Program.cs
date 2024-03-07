@@ -25,6 +25,8 @@ app.UseHttpsRedirection();
 
 app.UseRouting();
 
+app.UseRaiNbowEndpoints();
+
 app.UseFrontend();
 
 app.Run();
