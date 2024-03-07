@@ -1,8 +1,11 @@
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.FileProviders;
+using RaiNbow;
 using RaiNbow.API;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddRaiNbowServices();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
