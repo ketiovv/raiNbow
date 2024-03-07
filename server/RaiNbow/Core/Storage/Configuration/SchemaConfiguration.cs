@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using RaiNbow.Cms;
 
-namespace RaiNbow.Core.Storage;
+namespace RaiNbow.Core.Storage.Configuration;
 
 public class SchemaConfiguration : IEntityTypeConfiguration<Schema>
 {
