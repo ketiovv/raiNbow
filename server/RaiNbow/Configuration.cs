@@ -16,6 +16,8 @@ public static class Configuration
             options.UseNpgsql("name=Postgres"));
 
         services.AddAuthorization();
+        services.AddAuthentication();
+        
         services
             .AddIdentityApiEndpoints<IdentityUser>()
             .AddEntityFrameworkStores<RaiNbowContext>();
@@ -28,6 +30,8 @@ public static class Configuration
 
     public static IApplicationBuilder UseRaiNbow(this WebApplication app)
     {
+        app.UseAuthorization();
+        
         app.UseRaiNbowEndpoints();
         app.MapIdentityApi<IdentityUser>();
 

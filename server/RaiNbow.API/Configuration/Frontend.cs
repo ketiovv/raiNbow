@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.FileProviders;
 
-namespace RaiNbow.API;
+namespace RaiNbow.API.Configuration;
 
-public static class Configuration
+internal static class Frontend
 {
-    public static IApplicationBuilder UseFrontend(this WebApplication app)
+    internal static IApplicationBuilder UseFrontend(this WebApplication app)
     {
         if (app.Configuration.GetValue<bool>("HostUI"))
         {
