@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,9 +15,22 @@ public static class Configuration
         services.AddDbContext<RaiNbowContext>(options =>
             options.UseNpgsql("name=Postgres"));
 
+        services.AddAuthorization();
+        services
+            .AddIdentityApiEndpoints<IdentityUser>()
+            .AddEntityFrameworkStores<RaiNbowContext>();
+
         return services;
     }
-
-    public static IEndpointRouteBuilder UseRaiNbowEndpoints(this IEndpointRouteBuilder endpoints)
+    
+    private static IEndpointRouteBuilder UseRaiNbowEndpoints(this IEndpointRouteBuilder endpoints)
         => endpoints.UseCmsEndpoints();
+
+    public static IApplicationBuilder UseRaiNbow(this WebApplication app)
+    {
+        app.UseRaiNbowEndpoints();
+        app.MapIdentityApi<IdentityUser>();
+
+        return app;
+    }
 }
