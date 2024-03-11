@@ -10,7 +10,3 @@ This is a project created mainly for fun and participates in the [100commitow](h
 ### Phase
 
 The project is in the PoC development phase. I'm looking for the right approach and the most important concepts to consider.
-
-
-
-
