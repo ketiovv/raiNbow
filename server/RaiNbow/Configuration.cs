@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
@@ -33,7 +34,7 @@ public static class Configuration
         app.UseAuthorization();
         
         app.UseRaiNbowEndpoints();
-        app.MapIdentityApi<IdentityUser>();
+        app.MapIdentityApi<IdentityUser>().WithTags("Auth");
 
         return app;
     }
