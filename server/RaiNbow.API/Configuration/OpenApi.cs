@@ -37,7 +37,7 @@ internal static class OpenApi
         return services;
     }
 
-    public static IApplicationBuilder UseSwagger(this WebApplication app)
+    public static IApplicationBuilder UseSwaggerDocs(this WebApplication app)
     {
         if (app.Environment.IsDevelopment())
         {

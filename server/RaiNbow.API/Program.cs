@@ -9,7 +9,7 @@ builder.Services.AddSwagger();
 
 var app = builder.Build();
 
-app.UseSwagger();
+app.UseSwaggerDocs();
 
 app.UseHttpsRedirection();
 
