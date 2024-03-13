@@ -45,6 +45,7 @@ public class RaiNbowContext : IdentityDbContext<IdentityUser>
     private Task OnCreateSchema(Schema schema)
     {
         _logger.LogInformation($"{nameof(Schema)} {schema.Name} is created. Creating table for this schema...");
+        
         return Task.CompletedTask;
     }
 }
