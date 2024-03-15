@@ -24,7 +24,7 @@ public class RaiNbowContext : IdentityDbContext<IdentityUser>
         modelBuilder.HasDefaultSchema(StorageConstants.DataSchema);
     }
 
-    public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
+    public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new())
     {
         var addedEntities = ChangeTracker.Entries()
             .Where(e => e.State == EntityState.Added)
