@@ -58,7 +58,7 @@ public class RaiNbowContext : IdentityDbContext<IdentityUser>
         catch (Exception ex)
         {
             _logger.LogError($"Failed to create table '{schema.Name}': {ex.Message}");
-            throw; // Rethrow the exception to indicate failure
+            throw;
         }
     }
 
