@@ -1,5 +1,3 @@
-using System.Collections;
-
 namespace RaiNbow.Cms;
 
 public class FieldType
