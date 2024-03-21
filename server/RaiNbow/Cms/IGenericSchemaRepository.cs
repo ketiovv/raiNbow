@@ -7,4 +7,8 @@ public interface IGenericSchemaRepository
     /// </summary>
     /// <returns>JSON array of the results</returns>
     Task<string> GetAllAsJsonAsync(string schemaName);
+    Task<string> GetByIdAsJsonAsync(string schemaName, Guid recordId);
+    Task AddAsync(string schemaName, string json);
+    Task UpdateAsync(string schemaName, Guid recordId, string json);
+    Task DeleteAsync(string schemaName, Guid recordId);
 }
