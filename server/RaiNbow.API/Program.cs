@@ -7,9 +7,21 @@ builder.Services.AddRaiNbowServices();
 
 builder.Services.AddSwagger();
 
+const string corsAppSettingsPolicy = "AppSettings";
+builder.Services.AddCors(o =>
+{
+    o.AddPolicy(corsAppSettingsPolicy, p =>
+        p.WithOrigins(builder.Configuration.GetValue<string>("AllowedOrigins")?.Split(";") ?? [])
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials());
+});
+
 var app = builder.Build();
 
 app.UseSwaggerDocs();
+
+app.UseCors(corsAppSettingsPolicy);
 
 app.UseHttpsRedirection();
 
