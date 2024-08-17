@@ -11,11 +11,13 @@ public class RaiNbowContext : IdentityDbContext<IdentityUser>
     private readonly ILogger<RaiNbowContext> _logger;
     public DbSet<Schema> Schemas { get; set; }
     public DbSet<Field> Fields { get; set; }
+    public DbSet<FieldType> FieldType { get; set; }
     public RaiNbowContext(DbContextOptions<RaiNbowContext> options, ILogger<RaiNbowContext> logger) : base(options)
     {
         _logger = logger;
     }
 
+    // TODO: CMS schema does not work and Configurations at all
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -45,7 +47,7 @@ public class RaiNbowContext : IdentityDbContext<IdentityUser>
     {
         _logger.LogInformation($"{nameof(Schema)} {schema.Name} is created. Creating table for this schema.");
         
-        var createTableSql = $"CREATE TABLE \"{schema.Name}\" (Id SERIAL PRIMARY KEY)";
+        var createTableSql = $"CREATE TABLE \"{schema.Name}\" ({StorageConstants.IdFieldName} SERIAL PRIMARY KEY)";
 
         try
         {
