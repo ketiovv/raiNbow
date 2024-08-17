@@ -1,6 +1,0 @@
-@RaiNbow.API_HostAddress = http://localhost:5292
-
-GET {{RaiNbow.API_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
