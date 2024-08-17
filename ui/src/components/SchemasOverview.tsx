@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axiosInstance from '../api/axiosInstance'; // Import the configured axios instance
-import styles from './Schemas.module.scss';
+import { Link } from 'react-router-dom';
+import styles from './SchemasOverview.module.scss';
 import {Schema} from "../types"; // Import CSS Module styles
 
-const Schemas: React.FC = () => {
+const SchemasOverview: React.FC = () => {
     const [schemas, setSchemas] = useState<Schema[]>([]);
     const [error, setError] = useState<string | null>(null);
 
@@ -13,7 +14,7 @@ const Schemas: React.FC = () => {
                 const response = await axiosInstance.get<Schema[]>('/cms/schemas');
                 setSchemas(response.data);
             } catch (error) {
-                setError('Failed to fetch schemas');
+                setError('Failed to load schemas');
             }
         };
 
@@ -21,25 +22,19 @@ const Schemas: React.FC = () => {
     }, []);
 
     return (
-        <div className={styles.schemasContainer}>
-            <h2>Schemas</h2>
+        <div className={styles.schemasOverviewContainer}>
+            <h1 className={styles.title}>Schemas Overview</h1>
             {error && <p className={styles.error}>{error}</p>}
-            <ul>
-                {schemas.map((schema) => (
-                    <li key={schema.name}>
-                        <h3>{schema.name}</h3>
-                        <ul className={styles.fieldsList}>
-                            {schema.fields.map((field) => (
-                                <li key={field.name}>
-                                    {field.name} (Type ID: {field.fieldTypeId})
-                                </li>
-                            ))}
-                        </ul>
+            <ul className={styles.schemasList}>
+                {schemas.map(schema => (
+                    <li key={schema.id} className={styles.schemaItem}>
+                        <Link to={`/schemas/${schema.id}`}>{schema.name}</Link>
                     </li>
                 ))}
             </ul>
+            <Link to="/schemas/add" className={styles.addSchemaLink}>Add Schema</Link>
         </div>
     );
 };
 
-export default Schemas;
+export default SchemasOverview;

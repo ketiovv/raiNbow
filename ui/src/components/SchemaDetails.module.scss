@@ -1,0 +1,39 @@
+@import '../styles/variables.scss';
+
+.schemaDetailContainer {
+  padding: 20px;
+  background-color: $primary-color;
+  min-height: 100vh;
+  color: $text-color;
+
+  .title {
+    font-size: 28px;
+    color: $text-color;
+    margin-bottom: 20px;
+  }
+
+  .fieldsList {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: 10px 0;
+      border-bottom: 1px solid #444;
+
+      strong {
+        color: $link-color;
+      }
+    }
+  }
+
+  .loading {
+    color: $text-color;
+    font-size: 18px;
+  }
+
+  .error {
+    color: $error-color;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}

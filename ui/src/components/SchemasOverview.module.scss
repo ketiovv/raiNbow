@@ -1,0 +1,50 @@
+@import '../styles/variables.scss';
+
+.schemasOverviewContainer {
+  padding: 20px;
+  background-color: $primary-color;
+  min-height: 100vh;
+  color: $text-color;
+
+  .title {
+    font-size: 28px;
+    color: $text-color;
+    margin-bottom: 20px;
+  }
+
+  .schemasList {
+    list-style: none;
+    padding: 0;
+
+    .schemaItem {
+      margin-bottom: 10px;
+
+      a {
+        color: $link-color;
+        text-decoration: none;
+        font-size: 18px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .addSchemaLink {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 18px;
+    color: $link-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .error {
+    color: $error-color;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}
