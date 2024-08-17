@@ -1,0 +1,17 @@
+@import '../styles/variables.scss';
+
+.dashboardContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: $primary-color;
+  color: $text-color;
+  text-align: center;
+}
+
+.welcomeMessage {
+  font-size: 36px;
+  color: $text-color;
+  margin: 0;
+}

@@ -1,0 +1,53 @@
+@import '../styles/variables.scss';
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: $primary-color;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  margin: auto;
+
+  h2 {
+    color: $text-color;
+    margin-bottom: 20px;
+  }
+
+  .error {
+    color: $error-color;
+    margin-bottom: 15px;
+  }
+
+  form {
+    width: 100%;
+
+    div {
+      margin-bottom: 15px;
+    }
+
+    label {
+      color: $text-color;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #444;
+      border-radius: 4px;
+      background-color: $secondary-color;
+      color: $text-color;
+
+      &:focus {
+        outline: none;
+        border-color: $link-color;
+      }
+    }
+  }
+}

@@ -1,7 +1,12 @@
 import React from 'react';
+import styles from './Dashboard.module.scss'; // Import CSS Module styles
 
 const Dashboard: React.FC = () => {
-    return <h2>Dashboard: You are logged in!</h2>;
+    return (
+        <div className={styles.dashboardContainer}>
+            <h1 className={styles.welcomeMessage}>Welcome to the Dashboard!</h1>
+        </div>
+    );
 };
 
 export default Dashboard;

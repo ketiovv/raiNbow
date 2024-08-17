@@ -1,0 +1,42 @@
+@import './variables.scss';
+
+// Global styles
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+  background-color: $background-color;
+  color: $text-color;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+button {
+  border: none;
+  background-color: $link-color;
+  color: $text-color;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $link-color;
+  }
+}
+
+.app-container {
+  display: flex;
+}
+
+.content {
+  flex-grow: 1;
+  margin-left: 250px; // Adjust based on sidebar width
+  padding: 20px;
+}
